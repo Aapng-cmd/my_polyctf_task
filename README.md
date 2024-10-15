@@ -11,4 +11,8 @@ This script I use to delete all docker containers I created in process of testin
 This script is for drawing text on picture if i need to create flag inside image
 
 ## tasks
-[crypto]()
+[crypto](./crypto)
+[forensics](./forensics)
+[ppc](./ppc)
+[stego](./stego)
+[web](./web)
