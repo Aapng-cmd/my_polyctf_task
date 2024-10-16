@@ -1,0 +1,38 @@
+version: '3.2'
+services:
+  app:
+    build: .
+    ports:
+      - "8081:80"
+    environment:
+      - APACHE_RUN_DIR=/var/www/html
+      - APACHE_PID_FILE=/var/run/apache2/pid
+      - APACHE_RUN_USER=www-data
+      - APACHE_RUN_GROUP=www-data
+      - APACHE_LOG_DIR=/var/log/apache2
+    depends_on:
+      - db_mysql
+
+      
+  db_mysql:
+      container_name: db_mysql
+      image: mysql
+      command: ["mysqld"]
+      
+      
+      ports:
+        - "3307:3306"
+      restart: always
+      environment:
+        - MYSQL_USER=newuser
+        - MYSQL_PASSWORD=p4$$w0rd!_!
+        - MYSQL_ROOT_PASSWORD=shroot
+        - MYSQL_DATABASE=tmp1
+      volumes:
+        - /var/lib/mysqld:/var/lib/mysql
+    
+  init-db:
+    image: mysql
+    depends_on:
+      - db_mysql
+    command: ["mysql", "-u", "newuser", "-pp4$$w0rd!_!", "mydatabase", "<", "test.sql"]

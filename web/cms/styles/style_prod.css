@@ -1,0 +1,67 @@
+.name
+{
+  border: 2px solid;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
+}
+
+.image
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.price
+{
+  border: 2px solid;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
+}
+
+.much
+{
+  border: 2px solid;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
+}
+
+.descr
+{
+  border: 2px solid;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
+}
+
+.form-group
+{
+  border: 2px solid;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
+}
+
+.cont {
+  height: 50px;
+  position: relative;
+  border: 3px solid white;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
