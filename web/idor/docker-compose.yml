@@ -1,0 +1,36 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/var/www/html
+    networks:
+      - app-network
+    ports:
+      - 8080:80
+    links:
+      - mysql:mysql
+    dns:
+      - 127.0.0.1
+  mysql:
+    image: mysql:8.0
+    networks:
+      - app-network
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_HOST: localhost
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: images
+      MYSQL_USER: user1
+      MYSQL_PASSWORD: Giraffe#LemonTree88!
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - mysql_data:/var/lib/mysql
+volumes:
+  mysql_data:
+networks:
+  app-network:
+    driver: bridge
