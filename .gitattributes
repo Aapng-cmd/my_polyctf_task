@@ -5,3 +5,4 @@ crypto/aes/README.md README
 crypto/timestamp/README.md README
 web/symbols/README.md README
 web/xss/README.md README
+web/idor/README.md README
