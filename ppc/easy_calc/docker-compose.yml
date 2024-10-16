@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  python:
+    build:
+      context: .
+    ports:
+      - "37003:37003"
