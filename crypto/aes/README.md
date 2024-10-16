@@ -36,4 +36,4 @@ def __peremeshenie(self, matrix, enc=True):
         matrix[3] = list(reversed(matrix[3]))
     return matrix
 ```
-Okay, now everything is good. Now we have to guess key. See the time in description (* task was for 2024 *), and brute it. We brute hours and minutes, so we got a key and a flag.
+Okay, now everything is good. Now we have to guess key. See the time in description ( * task was for 2024 * ), and brute it. We brute hours and minutes, so we got a key and a flag.
