@@ -1,0 +1,23 @@
+FROM selenium/standalone-chrome
+
+USER root
+# Install Selenium
+RUN apt-get update && apt-get install -y python3-pip
+RUN apt-get update && apt-get install -y xvfb nano
+
+RUN pip3 install selenium beautifulsoup4 lxml
+
+RUN chmod 1777 /tmp/.X11-unix
+
+# Copy the Python script
+COPY ad.py /app/
+RUN chown 1001:1001 /app/ad.py
+
+USER 1001
+
+# Set the working directory
+WORKDIR /app
+
+# Start Xvfb
+# CMD ["Xvfb", ":99", "-screen", "0", "1024x768x24", "&", "python3", "ad.py"]
+CMD ["bash", "-c", "Xvfb :99 -screen 0 1024x768x24 & python3 ad.py"]
