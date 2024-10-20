@@ -1,19 +1,22 @@
-# Лаба по анализу
+# Analysis Lab
 
-
-## Категория
+## Category
 PWN
-## Описание
-У нас было задание сделать прогу для обработки строк. Посмотри, как я справился.
-## Автор
-[Art0](https://t.me/vchabk0)
-## Уровень
-medium
-## Стоимость
+
+## Description
+We had an assignment to create a program for string processing. Check out how I did.
+
+## Level
+Medium
+
+## Cost
 200
-## Файлы
+
+## Files
 Lab1
-## Хостинг
-нужен
-## Флаг
+
+## Hosting
+Needed
+
+## Flag
 PolyCTF{8Uf_0V3Rf10W_15_51mP13_645d5*@1W5D4}

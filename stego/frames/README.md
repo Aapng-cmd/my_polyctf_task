@@ -16,7 +16,7 @@ Medium
 task.zip
 
 ## Hosting
-Needed
+N/A
 
 ## Flag
 PolyCTF{j45t_4_fl4g_1_4m_burn7_0u7}
