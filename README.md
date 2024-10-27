@@ -17,3 +17,4 @@ This script is for drawing text on picture if i need to create flag inside image
 [stego](./stego)
 [web](./web)
 [pwn](./pwn)
+[reverse](./reverse)
