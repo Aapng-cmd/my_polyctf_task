@@ -1,0 +1,29 @@
+version: '3'
+services:
+  searcher:
+    build:
+      context: .
+      dockerfile: Dockerfile_searcher
+    volumes:
+      - ./src_searcher:/var/www/html
+    networks:
+      - app-network
+    ports:
+      - 8080:80
+    dns:
+      - 127.0.0.1
+      - 8.8.8.8
+      - 8.8.4.4
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile_web
+    volumes:
+      - ./src_web:/var/www/html
+    networks:
+      - app-network
+    dns:
+      - 127.0.0.1
+networks:
+  app-network:
+    driver: bridge

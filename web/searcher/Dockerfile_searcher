@@ -1,0 +1,15 @@
+FROM php:7.4-apache
+
+
+WORKDIR /var/www/html
+
+# Install dependencies
+
+RUN apt-get update && apt-get install -y libzip-dev zip curl php-curl nano
+RUN chown -R www-data:www-data /var/www/html
+
+COPY src_searcher/ /var/www/html/
+
+# Expose the port
+
+EXPOSE 80
