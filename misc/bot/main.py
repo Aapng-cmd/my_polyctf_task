@@ -6,7 +6,7 @@ import os
 # Define the API endpoint
 url = "https://api.groq.com/openai/v1/chat/completions"
 
-GROQ_API_KEY = "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"
+GROQ_API_KEY = ""
 
 # Set the headers
 headers = {
