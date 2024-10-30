@@ -19,3 +19,4 @@ This script is for drawing text on picture if i need to create flag inside image
 [pwn](./pwn)
 [reverse](./reverse)
 [osint](./osint)
+[misc](./misc)
