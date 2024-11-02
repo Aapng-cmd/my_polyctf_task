@@ -1,0 +1,32 @@
+services:
+  aqrium_main:
+    image: aqrium_main
+    restart: on-failure
+    build:
+      context: ./main_page
+      args:
+        - TASK_NAME=poly_task
+        - FLASK_SECRET="2RGTTDWCH5BPR4QNRGJXSCMLXYIV2Q3XO7LOKYKEXRTD3BSSO6VAasd90123!#WSAD"
+    ports:
+      - "5001:5001"
+    networks:
+      - aqrium-network
+
+  aqrium_target:
+    image: aqrium_target
+    restart: on-failure
+    build:
+      context: ./target_page
+      args:
+        - TASK_NAME=poly_task
+        - FLAG="PolyCTF{55rF_15_4_7H1N6_w17H_0p710n5}"
+    ports:
+      - "5002:5002"
+    networks:
+      - aqrium-network
+    env_file:
+      - .env
+
+networks:
+  aqrium-network:
+    driver: bridge
