@@ -10,7 +10,7 @@ We had an assignment to create a program for string processing. Check out how I 
 Medium
 
 ## Cost
-200
+250
 
 ## Files
 Lab1
