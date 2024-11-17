@@ -19,7 +19,7 @@ task.zip
 N/A
 
 ## Flag
-PolyCTF{Y3s_1t5_trul4_3x35t5}
+flag_plug
 
 ==========
 

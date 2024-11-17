@@ -17,7 +17,7 @@ task.txt
 ## Хостинг
 не нужен
 ## Флаг
-PolyCTF{4N07h3r_7Ry_0F_5un5h1N3_4Nd_n07H1N6_w0rK5_600D}
+flag_plug
 
 ======
 # решение

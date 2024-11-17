@@ -6,7 +6,7 @@ Name: Blue frost<br>
 Description: I think, that music delivered to me slowly. Report the problem.<br>
 Level: easy<br>
 Points: 150<br>
-Flag: PolyCTF{blu3t00t4_15_4ls0_an_op2i0n}<br>
+Flag: flag_plug<br>
 ==========
 ## solution
 In pcapng we can see music, but we know, that this is forensic, so we check for files.
