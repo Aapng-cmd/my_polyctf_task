@@ -16,7 +16,7 @@ N/A
 ## Хостинг
 нужен
 ## Флаг
-PolyCTF{juice_jacking}
+flag_plug
 
 ========
 ## решение

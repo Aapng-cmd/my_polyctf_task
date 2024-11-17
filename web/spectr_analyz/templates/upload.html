@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Загрузка файла</title>
+</head>
+<body>
+    <h1>Загрузите WAV файл для анализа</h1>
+    <form id="upload-form" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".wav" required>
+        <button type="submit">Загрузить</button>
+    </form>
+    
+    <div id="result"></div>
+    <button id="recognize-button" style="display:none;">Распознать текст</button>
+    <div id="recognized-text"></div>
+
+    <script>
+        document.getElementById('upload-form').onsubmit = async function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const response = await fetch('/upload', {
+                method: 'POST',
+                body: formData
+            });
+            const result = await response.json();
+            const resultDiv = document.getElementById('result');
+
+            if (response.ok) {
+                resultDiv.innerHTML = `<h2>Спектрограмма:</h2><img src="${result.spectrogram}" alt="Spectrogram">`;
+                // Показать кнопку распознавания текста
+                document.getElementById('recognize-button').style.display = 'block';
+                // Сохранить путь к спектрограмме для дальнейшего использования
+                document.getElementById('recognize-button').setAttribute('data-spectrogram', result.spectrogram);
+            } else {
+                resultDiv.innerHTML = `<h2>Ошибка:</h2><p>${result.error}</p>`;
+            }
+        };
+
+        document.getElementById('recognize-button').onclick = async function() {
+			const spectrogram = this.getAttribute('data-spectrogram');
+			const response = await fetch('/recognize_text', {
+				method: 'POST',
+				headers: {
+				    'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({ spectrogram: spectrogram.split('/').pop() })  // Передаем только имя файла
+			});
+			const result = await response.json();
+			const recognizedTextDiv = document.getElementById('recognized-text');
+
+			if (response.ok) {
+				recognizedTextDiv.innerHTML = `<h2>Сгенерированный текст:</h2><p>${result.generated_text}</p>`;
+			} else {
+				recognizedTextDiv.innerHTML = `<h2>Ошибка:</h2><p>${result.error}</p>`;
+			}
+		};
+    </script>
+</body>
+</html>

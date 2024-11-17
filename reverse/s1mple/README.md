@@ -22,5 +22,5 @@ task
 нужен
 
 ## Флаг
-PolyCTF{8UfF3R_0v3rF10w_w17H_W47cH1N_V4R148135}
+flag_plug
 

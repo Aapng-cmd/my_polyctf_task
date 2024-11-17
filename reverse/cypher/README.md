@@ -16,4 +16,4 @@ a.out
 ## Хостинг
 не нужен
 ## Флаг
-PolyCTF{dr4W4F141H3R31fY0Uc4n415057R0N6C1Ph3r}
+flag_plug

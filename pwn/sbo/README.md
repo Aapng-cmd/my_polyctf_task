@@ -19,4 +19,4 @@ Lab1
 Needed
 
 ## Flag
-PolyCTF{8Uf_0V3Rf10W_15_51mP13_645d5*@1W5D4}
+flag_plug

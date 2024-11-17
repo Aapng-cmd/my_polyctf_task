@@ -19,7 +19,7 @@ task.zip
 Needed
 
 ## Flag
-PolyCTF{1D0R_15_57111_d4n63r0u5}
+flag_plug
 
 ==========
 

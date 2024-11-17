@@ -3,7 +3,7 @@
 #include <cstdlib>
 #include <ctime>
 
-std::string FLAG = "PolyCTF{flag_plug}";
+std::string FLAG = "flag_plug";
 
 std::pair<int, std::vector<int>> get_random(std::vector<int>& array) {
     int i = rand() % array.size();

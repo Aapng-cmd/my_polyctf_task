@@ -19,7 +19,7 @@ services:
       context: ./target_page
       args:
         - TASK_NAME=poly_task
-        - FLAG="PolyCTF{55rF_15_4_7H1N6_w17H_0p710n5}"
+        - FLAG="flag_plug"
     ports:
       - "5002:5002"
     networks:

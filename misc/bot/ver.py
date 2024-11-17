@@ -12,7 +12,7 @@ model_name = "EleutherAI/gpt-neo-1.3B"
 url = f"https://api-inference.huggingface.co/models/{model_name}"
 
 # Secret that will be stored in the model (obfuscated)
-secret = "PolyCTF{flag_plug}"
+secret = "flag_plug"
 
 # Store context without revealing the secret directly
 # Modify the context to clarify that you don't want the context repeated

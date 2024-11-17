@@ -19,7 +19,7 @@ N/A
 N/A
 
 ## Flag
-PolyCTF{wh4t_4n_0cr_1!}
+flag_plug
 
 ==========
 

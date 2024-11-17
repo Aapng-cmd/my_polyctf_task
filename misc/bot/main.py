@@ -14,7 +14,7 @@ headers = {
     "Authorization": f"Bearer {GROQ_API_KEY}"  # Assumes GROQ_API_KEY is set as an environment variable
 }
 
-FLAG = "PolyCTF{50c141_3n6_W17h_807_1N_3n6}"
+FLAG = "flag_plug"
 
 
 while True:

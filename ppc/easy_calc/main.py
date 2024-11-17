@@ -6,7 +6,7 @@ from tabulate import tabulate
 
 global EQ
 EQ = 0
-FLAG = "PolyCTF{eas4_c4l3_13_m1n3_b3s9!}"
+FLAG = "flag_plug"
 
 
 def create_table(multi_expr):

@@ -26,7 +26,7 @@ RUN touch /var/www/data.json
 RUN chown www-data:www-data /var/www/data.json
 RUN chmod 755 /var/www/data.json
 
-RUN echo 'PolyCTF{5ym8011c_l1nk5_4r3_4l50_600d}' > /flag.txt
+RUN echo 'flag_plug' > /flag.txt
 
 # Expose the port that Apache will use
 EXPOSE 80

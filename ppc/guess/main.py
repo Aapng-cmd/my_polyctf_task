@@ -1,7 +1,7 @@
 from random import randint
 
 
-FLAG = "PolyCTF{64m811n6_15_r16H7_w4y_70_5uCc355_#195&21545qW3D}"
+FLAG = "flag_plug"
 
 def get_random(array):
     i = randint(0, len(array) - 1)

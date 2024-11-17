@@ -5,8 +5,8 @@
 
 
 int main() {
-	char buffer[40] = "PolyCTF{gather_internal_variable}";
-	// char buffer[40] = "PolyCTF{gather_internal_variable}";
+	char buffer[40] = "flag_plug";
+	// char buffer[40] = "flag_plug";
 	
 /*	printf("%p\n", &buffer);*/
 /*	fflush(stdout);*/

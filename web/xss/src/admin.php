@@ -10,7 +10,7 @@ ini_set('session.cookie_httponly', 0);
 
 // Check if the user is an admin
 if ($_SESSION['player_id'] === 'admin') {
-    echo "PolyCTF{h3lp_m3_8_h0ur5_1_r0t}";
+    echo "flag_plug";
 } else {
     echo "You are not an admin";
 }

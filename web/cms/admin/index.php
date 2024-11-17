@@ -25,7 +25,7 @@ $is_admin = $row['is_admin'];
 
 if ($is_admin)
 {
-  $row = ['flag' => 'PolyCTF{y34h_s0m371m3_c00k13_15_n0t_s3c}', 'ps' => 'Just use php_session()'];
+  $row = ['flag' => 'flag_plug', 'ps' => 'Just use php_session()'];
   
   echo "<p>" . $row['flag'] . "</p>";
   echo "<p>" . $row['ps'] . "</p>";

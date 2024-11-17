@@ -16,7 +16,7 @@ flag
 ## Хостинг
 нужен
 ## Флаг
-PolyCTF{gather_internal_variable}
+flag_plug
 
 ==========
 ## решение

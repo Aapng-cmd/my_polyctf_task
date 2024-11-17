@@ -6,7 +6,7 @@ from ast import literal_eval
 from base64 import b64encode
 
 
-FLAG = "PolyCTF{f146_15_h3r3_1n_060R0D^_!}"
+FLAG = "flag_plug"
 
 ALL = 150
 Q = ALL // 3 * 2

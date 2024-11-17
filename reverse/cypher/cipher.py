@@ -1,4 +1,4 @@
-FLAG = "PolyCTF{dR4W4F146H3R31fY0Uc4n415057R0N6C1Ph3r}"
+FLAG = "flag_plug"
 
 def caesar_encode(text, shift):
     encoded_text = ""

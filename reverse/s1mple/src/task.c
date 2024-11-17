@@ -11,7 +11,7 @@ struct User
 
 void main()
 {
-    char *flag = "PolyCTF{8UfF3R_0v3rF10w_w17H_W47cH1N_V4R148135}";
+    char *flag = "flag_plug";
     char right[16];
     char left[16];
     char forward[16];

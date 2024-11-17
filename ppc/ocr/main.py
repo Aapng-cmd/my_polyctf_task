@@ -711,7 +711,7 @@ def generate_spec_string(string):
 
 print("А ты готов вводить буковки сто раз? (расслабься, регистр - нижний)\n")
 Q = 0
-FLAG = "PolyCTF{Wh4t_4n_0cr_1!}".lower()
+FLAG = "flag_plug".lower()
 KEYS = 'abcdefghijklmnopqrstuvwxyz_140!{}'
 ans_arr = []
 while Q < 150:

@@ -16,7 +16,7 @@ task
 ## Хостинг
 нужен
 ## Флаг
-PolyCTF{8UfF3R_0v3rF10w_kN0W1N6_p01N73r}
+flag_plug
 
 ==========
 ## решение

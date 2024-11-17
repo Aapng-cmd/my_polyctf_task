@@ -19,7 +19,7 @@ N/A
 N/A
 
 ## Flag
-PolyCTF{R3m3m83R_K4w0?_D3d4!}
+flag_plug
 
 ==========
 

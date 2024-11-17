@@ -19,7 +19,7 @@ stat_anon.php
 Needed
 
 ## Flag
-PolyCTF{c001_Qu357_15_17?45D0QwM654!54#}
+flag_plug
 
 ==========
 
