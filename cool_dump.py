@@ -15,7 +15,7 @@ def leetspeak_converter(text):
     }
 
     leetspeak_text = ''
-    for o, char in enumerate(text):
+    for i, char in enumerate(text):
         if char.lower() in leetspeak_map:
             leetspeak_text += leetspeak_map[char.lower()]
         else:

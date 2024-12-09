@@ -156,7 +156,7 @@ class CryptoProj():
 key = "ehlo"
 c = CryptoProj(key)
 
-a = "PolyCTF{deadxbeaf}"
+a = "flag_plug"
 new = c.enecrypt_all(a)
 print(new)
 print()

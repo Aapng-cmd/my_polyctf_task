@@ -20,7 +20,7 @@ def code_matrices(matrix_a, matrix_b):
     return result
 
 
-FLAG = b"PolyCTF{flag_plug}"
+FLAG = b"flag_plug"
 FLAG += secrets.token_bytes(4 - len(FLAG) % 4)
 
 blocks = []

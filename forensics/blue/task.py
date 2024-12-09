@@ -1,4 +1,4 @@
-FLAG = "PolyCTF{blu3t00t4_15_4ls0_an_op2i0n}"
+FLAG = "flag_plug"
 
 def caesar_encrypt(text, shift):
     """

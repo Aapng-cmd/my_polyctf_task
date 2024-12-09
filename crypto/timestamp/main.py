@@ -22,7 +22,7 @@ def generate_random_string(length):
     return ''.join(str(random.choice([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])) for _ in range(length))
 
 
-FLAG = "PolyCTF{71m3_47ck_15_dn63r0u5}"
+FLAG = "flag_plug"
 def bitw(st, shift):
     ans = ""
     shift = int(shift) % 8

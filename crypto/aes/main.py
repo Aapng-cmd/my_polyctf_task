@@ -1,5 +1,5 @@
 import os
-FLAG = "PolyCTF{Y3s_1t5_trul4_3x35t5} (if y0u w4nt t0 ch3ck https://t.me/glebkomelkov)"
+FLAG = "flag_plug (if y0u w4nt t0 ch3ck https://t.me/glebkomelkov)"
 import time
 
 class CryptoProj():
