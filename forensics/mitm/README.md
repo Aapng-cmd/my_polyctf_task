@@ -1,9 +1,11 @@
-# Mim
+# task_name
 
 ## Category
 Forensics
 
 ## Description
+well, yeah
+hah
 
 ## Level
 Easy
@@ -12,15 +14,18 @@ Easy
 150
 
 ## Files
-N/A
+task.zip
 
 ## Hosting
-N/A
+N
 
 ## Flag
+flag_plug
 
-
-==========
+## Hints
+hint1|10
+hint2|20
 
 ## Solution
-N/A
+maybe, heh
+<code>This could be</code>

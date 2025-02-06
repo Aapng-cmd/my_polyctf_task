@@ -19,7 +19,7 @@ services:
     networks:
       - app-network
     ports:
-      - 3306:3306
+      - 3306
     environment:
       MYSQL_HOST: localhost
       MYSQL_ROOT_PASSWORD: secret

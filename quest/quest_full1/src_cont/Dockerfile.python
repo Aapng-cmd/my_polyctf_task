@@ -1,0 +1,12 @@
+FROM selenium/standalone-chrome
+
+USER root
+RUN apt-get update && apt-get install -y python3-pip
+RUN apt-get update && apt-get install -y nano
+
+
+# Copy the Python script
+COPY ./src_chat /root
+
+
+CMD ["bash", "-c", "python3 /root/chat.py"]

@@ -1,0 +1,64 @@
+version: '3.3'  # Use a more recent version if available
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src_web:/var/www/html  # Mount the src_web directory to the web server
+    networks:
+      - app-network
+    ports:
+      - "80:80"  # Map port 8080 on the host to port 80 in the container
+    depends_on:
+      - mysql  # Ensure MySQL starts before the web service
+    environment:
+      - MYSQL_HOST=mysql  # Use the service name as the host
+      - MYSQL_DATABASE=file_database
+      - MYSQL_USER=user1
+      - MYSQL_PASSWORD=SVZpcIZV9l8vIv5hrrq81e
+    links:
+      - mysql:mysql
+    dns:
+      - 127.0.0.1
+      - 8.8.8.8
+      - 8.8.4.4
+
+  mysql:
+    image: mysql:8.0
+    networks:
+      - app-network
+    dns:
+      - 127.0.0.1
+    environment:
+      MYSQL_ROOT_PASSWORD: asdjiAS8153ijnasdP
+      MYSQL_DATABASE: file_database
+      MYSQL_USER: user1
+      MYSQL_PASSWORD: SVZpcIZV9l8vIv5hrrq81e
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql  # Initialize the database
+      - mysql_data:/var/lib/mysql  # Persist MySQL data
+  
+  chatbot:
+    build:
+      context: .
+      dockerfile: Dockerfile.python
+    depends_on:
+      - web
+    networks:
+      - app-network
+    dns:
+      - 127.0.0.1
+      - 8.8.8.8
+      - 8.8.4.4
+    links:
+      - web:web
+#    command: bash -c "python3 /root/chat.py"
+  
+volumes:
+  mysql_data:  # Named volume for MySQL data persistence
+
+networks:
+  app-network:  # Define a custom bridge network
+    driver: bridge

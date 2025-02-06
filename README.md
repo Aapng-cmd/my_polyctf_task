@@ -10,6 +10,9 @@ This script I use to delete all docker containers I created in process of testin
 3. draw_flag.py
 This script is for drawing text on picture if i need to create flag inside image
 
+4. push_git.sh
+This script is for fast pushing projects to gihub
+
 ## tasks
 [crypto](./crypto)
 [forensics](./forensics)

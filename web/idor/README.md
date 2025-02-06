@@ -16,7 +16,7 @@ Medium
 task.zip
 
 ## Hosting
-Needed
+Y
 
 ## Flag
 flag_plug
