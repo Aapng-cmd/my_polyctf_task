@@ -6,9 +6,9 @@ import random
 from prettytable import PrettyTable
 
 
-FLAG = "PolyCTF{R3m3m83R_K4w0?_D3d4!}"
+FLAG = "flag_plug"
 
-API_TOKEN = "lip_kl3DpaHo9fD6ZJsmg0a0"
+API_TOKEN = ""
 session = berserk.TokenSession(API_TOKEN)
 client = berserk.Client(session=session)
 
