@@ -23,3 +23,4 @@ This script is for fast pushing projects to gihub
 [reverse](./reverse)
 [osint](./osint)
 [misc](./misc)
+[quest](./quest)
