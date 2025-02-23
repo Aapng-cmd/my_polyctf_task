@@ -35,7 +35,7 @@ if [ -f "$CREDENTIALS_FILE" ]; then
     # echo "$GIT_USERNAME|$GIT_PASSWORD"
     REPO_TAIL=$(echo $REPO_URL | cut -d '/' -f 5)
 
-    git pull https://"$GIT_USERNAME":"$GIT_PASSWORD"@github.com/$GIT_USERNAME/$REPO_TAIL main
+    git push https://"$GIT_USERNAME":"$GIT_PASSWORD"@github.com/$GIT_USERNAME/$REPO_TAIL main
 else
     echo "Credentials file not found."
     exit 1
