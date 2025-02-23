@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #eaeaea; /* Softer background color */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content horizontally */
+        }
+        nav {
+            width: 100%;
+            background-color: #007BFF; /* Navigation bar color */
+            padding: 10px 20px;
+            display: flex;
+            justify-content: flex-end; /* Align items to the right */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-button {
+            padding: 10px 15px;
+            margin-left: 10px;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .nav-button:hover {
+            background-color: #004494;
+        }
+        h2, h3 {
+            color: #333;
+            text-align: center; /* Center text */
+        }
+        .button-container {
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 15px;
+            margin: 0 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center the images */
+        }
+        li {
+            margin: 10px 0;
+        }
+        img {
+            max-width: 300px;
+            max-height: 300px;
+            border-radius: 8px;
+        }
+        a {
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 16px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <button class="nav-button" onclick="location.href='static/download.zip'">Try this project by yourself</button>
+    </nav>
+
+    <h2>Welcome, {{ name }}!</h2>
+    <div class="button-container">
+        <button onclick="location.href='{{ url_for('search', animal='cats') }}'">Cats</button>
+        <button onclick="location.href='{{ url_for('search', animal='dogs') }}'">Dogs</button>
+        <button onclick="location.href='{{ url_for('search', animal='pandas') }}'">Pandas</button>
+    </div>
+
+    {% if paths %}
+        <h3>Images for "{{ animal_name }}":</h3>
+        <ul>
+            {% for path in paths %}
+                <li>
+                    <img src="{{ path[0] }}" alt="Image of {{ path[1] }}">
+                </li>
+            {% endfor %}
+        </ul>
+    {% elif animal %}
+        <p>No images found for "{{ animal }}".</p>
+    {% endif %}
+	<p>{{ error }}</p>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>

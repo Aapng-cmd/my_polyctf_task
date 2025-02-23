@@ -1,0 +1,36 @@
+version: '3.3'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.python
+    volumes:
+      - ./src_web:/app
+    networks:
+      - app-network
+    ports:
+      - "5000:5000"
+    dns:
+      - 127.0.0.1
+      - 8.8.8.8
+      - 8.8.4.4
+    command: bash -c "python3 /app/web.py"
+  
+  machine:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - app-network
+    ports:
+      - "22:22"
+    dns:
+      - 127.0.0.1
+      - 8.8.8.8
+      - 8.8.4.4
+
+
+networks:
+  app-network:
+    driver: bridge

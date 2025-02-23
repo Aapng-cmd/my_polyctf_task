@@ -1,0 +1,13 @@
+FROM python:3.9
+
+RUN apt update && apt install curl net-tools -y
+
+WORKDIR /app
+
+COPY ./src_web/ .
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+EXPOSE 5000
+
+CMD ["python", "web.py"]  # Adjusted path since we're in /app
