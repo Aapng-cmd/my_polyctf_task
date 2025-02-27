@@ -61,7 +61,7 @@ def hashing(arr):
         else:
             index = pow(sum_of_string("".join(arr[:i + 1])), abs(sum_of_string(arr[i - 1]) << sum_of_string(arr[i])), CHAR_LEN)
         HASH.append(CHARACTERS[index % CHAR_LEN])
-    prev_cycle = current_cycle
+        prev_cycle = current_cycle
     return ''.join(HASH)
 
 def hash_string(s):

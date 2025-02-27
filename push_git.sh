@@ -1,10 +1,23 @@
 #!/bin/bash
 
+
+check_variables() {
+    if [ -z "$REPO_URL" ] || [ -z "$PROJECT_DIR" ]; then
+        echo "Error: One or more required variables are not set."
+        echo "Usage: $0 <repo_url> <project_dir> <commit_message>"
+        echo "OR: $0 <repo_url> <project_dir>"
+        echo "default commit message is 'Mid commit'"
+        exit 1
+    fi
+}
+
 # Set variables
 REPO_URL=$1
 PROJECT_DIR=$2
 COMMIT=$3
 CREDENTIALS_FILE="/root/git"
+
+check_variables
 
 # Change to the project directory
 cd "$PROJECT_DIR" || { echo "Project directory not found"; exit 1; }
