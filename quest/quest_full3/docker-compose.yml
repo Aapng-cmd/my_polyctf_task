@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  main_app:
+    build:
+      context: .
+      dockerfile: Dockerfile.ubuntu
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=development
+    depends_on:
+      - mysql
+    networks:
+      - app-network
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+
+  flask_app:
+    build:
+      context: .
+      dockerfile: Dockerfile.python
+    environment:
+      - FLASK_ENV=development
+    depends_on:
+      - mysql
+    networks:
+      - app-network
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+      
+  mysql:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: GpQmbMrfCWkUQsISCUe9D7AbvU9YlTpS53b4bhtHqHS86a87tu8wuqkeFxkGcHPfA
+      MYSQL_DATABASE: full_database
+      MYSQL_USER: user1
+      MYSQL_PASSWORD: q1cKsndvk8JipwiDqlsmlq4KNfmJOTVGD5JHMKNMRWgOwVONdQKGwKmoU2JiKzwoT
+    ports:
+      - "3306"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - app-network
+
+
+networks:
+  app-network:
+    driver: bridge

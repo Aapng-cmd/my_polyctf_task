@@ -1,0 +1,25 @@
+DROP DATABASE IF EXISTS full_database;
+
+CREATE DATABASE full_database;
+
+USE full_database;
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(60) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS texts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    text_find TEXT
+);
+
+DROP USER IF EXISTS user1;
+
+CREATE USER 'user1'@'%' IDENTIFIED BY 'q1cKsndvk8JipwiDqlsmlq4KNfmJOTVGD5JHMKNMRWgOwVONdQKGwKmoU2JiKzwoT';
+
+GRANT ALL PRIVILEGES ON full_database.* TO 'user1'@'%';
+
+-- YPtgJtI15SrjReaWLuKHI3Cu9AqQXQ1C1xYg4gM2x5UYYofajw7Nl9KHDES9asrT0VZXcI2066b7Nu1f
+INSERT INTO users (username, password) VALUES ('admin', 'qLckUF5fEx86g1LcujOHefl03to0gpd');

@@ -1,0 +1,59 @@
+# Use the official Ubuntu image
+FROM ubuntu:20.04
+
+# Set environment variables
+ENV DEBIAN_FRONTEND=noninteractive
+ENV USERNAME=macqueen
+ENV USERHOME=/home/$USERNAME
+
+RUN useradd -m -s /bin/bash $USERNAME
+RUN echo "$USERNAME:Mosallam@@2022" | chpasswd
+RUN echo 'root:aB3$dE!fG@hI#jK$lM%n^oP*qR&sT(u)V)wX+yZ' | chpasswd
+RUN echo "$USERNAME ALL=(ALL) NOPASSWD: /opt/login" >> /etc/sudoers
+
+# Install necessary packages
+RUN apt-get update && \
+    apt-get install -y \
+    libzip-dev \
+    libxml2-dev \
+    python3 \
+    python3-pip \
+    python3-venv \
+    curl \
+    ncat \
+    gcc \
+    nano \
+    make
+
+RUN apt-get update && \
+    apt-get install -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" sudo && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+RUN mkdir -p /app/templates
+
+# Copy the application code
+COPY ./src_web/web.py /app
+COPY ./src_web/cipher.py /app
+COPY ./src_web/requirements.txt /app
+COPY ./src_web/templates /app/templates
+
+# Install Flask dependencies
+RUN pip3 install -r requirements.txt
+
+
+COPY ./src_inner/login.c /tmp/login.c
+RUN gcc -Wall -g -O2 -o /opt/login /tmp/login.c
+RUN rm /tmp/login.c
+
+COPY ./src_inner/root_flag.txt /root/flag.txt
+COPY ./src_inner/user_flag.txt /app/flag.txt
+
+RUN chown -R www-data:www-data /app
+
+EXPOSE 5000
+
+USER www-data
+# Command to run the application
+CMD ["python3", "web.py"]

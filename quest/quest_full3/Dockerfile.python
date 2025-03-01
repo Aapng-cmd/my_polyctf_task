@@ -1,0 +1,18 @@
+# Use the official Python 3.12 image
+FROM python:3.12
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the application code
+COPY ./src_web/search.py /app
+COPY ./src_web/requirements.txt /app
+
+# Install Flask dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Expose the port the app runs on
+EXPOSE 5001
+
+# Command to run the application
+CMD ["python", "search.py"]
