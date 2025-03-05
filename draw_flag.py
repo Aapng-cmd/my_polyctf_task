@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3.10
 
 import argparse
 from PIL import Image, ImageDraw, ImageFont
