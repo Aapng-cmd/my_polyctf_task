@@ -17,4 +17,4 @@ FLAG.jpg
 N
 
 ## Flag
-PolyCTF{I_Know_What_I'm_Doing_!}
+flag_plug

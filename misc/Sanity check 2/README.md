@@ -19,4 +19,4 @@ FLAG2.jpg;FLAG3.jpg
 N
 
 ## Flag
-PolyCTF{1_d0_n0t_k60w_Wh4_Do1n9}
+flag_plug
