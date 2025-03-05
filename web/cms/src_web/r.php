@@ -4,7 +4,7 @@ function conn()
 {
 
   $dbname     = "tmp1";
-  $dbhost     = "127.0.0.1";
+  $dbhost     = "mysql";
   $dbusername = "newuser";
   $dbpassword = 'p4$$w0rd!_!';
   

@@ -1,5 +1,3 @@
-DELIMITER ;
-
 DROP DATABASE IF EXISTS tmp1;
 CREATE DATABASE tmp1;
 
@@ -39,6 +37,11 @@ CREATE TABLE bought (
   `count` int
 );
 
+DROP USER IF EXISTS 'newuser'@'%';
+
+CREATE USER 'newuser'@'%' IDENTIFIED BY 'p4$$w0rd!_!';
+GRANT ALL PRIVILEGES ON tmp1.* TO 'newuser'@'%';
+FLUSH PRIVILEGES;
 
 # HolY_c0W_it is!
 INSERT INTO user (name, password, email, is_admin) VALUES ('holy_cow', '$2y$10$HVct9N1f4ttkxNRWYSa38eNzflBjQ7Na6DHSH.Ab7yfGv4ZufZxAO', 'holy_cow@all.year', TRUE);

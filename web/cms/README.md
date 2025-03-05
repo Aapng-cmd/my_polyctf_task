@@ -13,15 +13,13 @@ Medium
 200
 
 ## Files
-task.zip
+N
 
 ## Hosting
-Needed
+Y
 
 ## Flag
-flag_plug
-
-==========
+PMLCTF{5Q11_1n51D3_c00K135_15_5m7h_n3w}
 
 ## Solution
 Web app => SQLi. Try login and password. Nothing. Check cookies => got it. And then everything is great: brute-force the password of admin from the hash, log in as admin, and get the flag.

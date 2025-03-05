@@ -25,7 +25,7 @@ $is_admin = $row['is_admin'];
 
 if ($is_admin)
 {
-  $row = ['flag' => 'flag_plug', 'ps' => 'Just use php_session()'];
+  $row = ['flag' => 'PMLCTF{5Q11_1n51D3_c00K135_15_5m7h_n3w}', 'ps' => 'Just use php_session()'];
   
   echo "<p>" . $row['flag'] . "</p>";
   echo "<p>" . $row['ps'] . "</p>";
