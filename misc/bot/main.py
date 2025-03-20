@@ -14,7 +14,7 @@ headers = {
     "Authorization": f"Bearer {GROQ_API_KEY}"  # Assumes GROQ_API_KEY is set as an environment variable
 }
 
-FLAG = "flag_plug"
+FLAG = "PMLCTF{This_is_a_Win}"
 
 
 while True:

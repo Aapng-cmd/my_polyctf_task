@@ -1,0 +1,10 @@
+[package]
+name = "prog"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+opt-level = 0
+
+[dependencies]
+rand = "0.8"

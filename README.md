@@ -1,4 +1,4 @@
-# Tasks for [polyctf](https://polyctf.ru/)
+# Tasks for [DUCKERZ](https://duckerz.ru/)
 
 ### scripts I use for creating tasks
 1. cool_dump.py
