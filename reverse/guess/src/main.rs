@@ -1,6 +1,8 @@
 use std::io;
 use rand::Rng;
 
+static mut _IMPORT: u8 = 0;
+
 fn log_reg(name: &str, password: &str) -> bool {
     let name = name.trim();
     let password = password.trim();
@@ -88,7 +90,7 @@ fn gamble(salt: &str) -> bool
             {
                 mystery = (((mystery ^ (c as i32)) | choice) * bet) % 100;
             }
-            println!("PSSS: {}", mystery);
+            // println!("PSSS: {}", mystery);
             println!("Do not be sad, here i give you one of digits: {}", mystery % 10);
         }
         
@@ -98,6 +100,9 @@ fn gamble(salt: &str) -> bool
     
     if creds >= 3000
     {
+        unsafe {
+            _IMPORT = '&' as u8;
+        }
         return true;
     }
     else
@@ -119,14 +124,26 @@ fn simple_hash(input: &str) -> char {
         26..=51 => (b'A' + (index - 26) as u8) as char, // 'A' to 'Z'
         52..=61 => (b'0' + (index - 52) as u8) as char, // '0' to '9'
         62 => '{',                                       // '{'
-        63 => '_',                                       // '_'
-        64 => '}',                                       // '}'
+        63 => '_',      
+        64 => '&',
+        65 => '*',
+        66 => '^',                              // '_'
+        67 => '}',                                       // '}'
         _ => unreachable!(),                             // This should never happen
     }
 }
 
 fn get_flag()
 {
+    unsafe {
+        let mut _import = _IMPORT;
+        // println!("FLAG STATUS CHECK {}", _import);
+        if _import != '&' as u8
+        {
+            return;
+        }
+    }
+    
     let mut flag = String::new();
     
     flag.push(simple_hash("dmuspU1CLHEYPE7"));

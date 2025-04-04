@@ -1,10 +1,14 @@
 [package]
-name = "prog"
+name = "tmp"
 version = "0.1.0"
-edition = "2021"
-
-[profile.release]
-opt-level = 0
+edition = "2024"
 
 [dependencies]
 rand = "0.8"
+
+[profile.release]
+opt-level = 3          # Maximum optimization level
+lto = true             # Enable Link Time Optimization
+debug = false          # Disable debug info
+panic = "abort"        # Use abort on panic for smaller binaries
+codegen-units = 1

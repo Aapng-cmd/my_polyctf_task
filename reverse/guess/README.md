@@ -19,7 +19,7 @@ prog
 N
 
 ## Flag
-flag_plug
+DUCKERZ{rU57_15_h4rD_70_uNd3r574nD_8u7_17_15_54F3}
 
 ## Solution
 Ох, это будет тяжело.

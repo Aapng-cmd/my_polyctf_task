@@ -12,7 +12,7 @@ def simple_hash(input_str):
     total_sum = sum(ord(c) for c in input_str)
     
     # Map the sum to a value between 0 and 64 (for 'a'-'z', 'A'-'Z', '0'-'9', '{', '_', '}')
-    index = total_sum % 65  # 65 characters in the set
+    index = total_sum % 68  # 65 characters in the set
 
     # Convert the index to a corresponding ASCII character
     if 0 <= index <= 25:
@@ -25,15 +25,21 @@ def simple_hash(input_str):
         return '{'                             # '{'
     elif index == 63:
         return '_'                             # '_'
+    elif index == 64:
+        return '&'
+    elif index == 65:
+        return '*'
+    elif index == 66:
+        return '^'
     else:
         return '}'                             # '}'
 
 def generate_string_for_hash(target_char, length):
-    if len(target_char) != 1 or target_char not in (string.ascii_letters + string.digits + '{}_'):
-        raise ValueError("Target character must be a single alphanumeric character or one of '{', '_', '}'.")
+    if len(target_char) != 1 or target_char not in (string.ascii_letters + string.digits + '{}_&*^'):
+        raise ValueError("Target character must be a single alphanumeric character or one of '{', '_', '}', '&*^'.")
 
     # Create a character set
-    characters = string.ascii_lowercase + string.ascii_uppercase + string.digits + '{}_'
+    characters = string.ascii_lowercase + string.ascii_uppercase + string.digits + '{}_&*^'
 
     # Generate random strings until we find one that hashes to the target character
     while True:
@@ -47,3 +53,5 @@ def brute():
          for c in "L6cAEIyrNgZacq1":
                  x = (((x ^ ord(c)) | 1) * 1) % 100
          print(i, x)
+
+generate_flag_pattern("DUCKERZ{rU57_15_h4rD_70_uNd3r574nD_8u7_17_15_54F3}")
