@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    environment:
+      - DATABASE_URL=sqlite:///app/users.db # Adjust this if needed
+    depends_on:
+      - db
+
+  db:
+    image: nouchka/sqlite3:latest
+    volumes:
+      - ./src/users.db:/app/users.db

@@ -125,15 +125,12 @@ fn simple_hash(input: &str) -> char {
         52..=61 => (b'0' + (index - 52) as u8) as char, // '0' to '9'
         62 => '{',                                       // '{'
         63 => '_',      
-        64 => '&',
-        65 => '*',
-        66 => '^',                              // '_'
-        67 => '}',                                       // '}'
+        64 => '}',                                       // '}'
         _ => unreachable!(),                             // This should never happen
     }
 }
 
-fn get_flag()
+fn handle_error()
 {
     unsafe {
         let mut _import = _IMPORT;
@@ -219,7 +216,7 @@ fn main() {
     {
         if gamble(&password)
         {
-            get_flag();
+            handle_error();
         }
     }
     else
