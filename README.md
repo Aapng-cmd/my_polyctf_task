@@ -1,4 +1,4 @@
-# Tasks for [DUCKERZ](https://duckerz.ru/)
+# Tasks for [PML30CTF](http://not.found)
 
 ### scripts I use for creating tasks
 1. cool_dump.py
